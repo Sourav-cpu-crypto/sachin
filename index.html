@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="div1">
+      <p id="txt" class="txt1">OK, here wo go.</p>
+    </div>
+    <button id="btn_next" type="button" onclick="onClick()">Next</button>
+    <script>
+
+      function onClick() {
+        var textBox = document.getElementById("txt");
+        switch (textBox.className) {
+          case "txt1": {
+            textBox.innerHTML = "This is text 1";
+            swapClasses(textBox, "txt2");
+            break;
+          }
+          case "txt2": {
+            textBox.innerHTML = "This is text 2";
+            swapClasses(textBox, "txt1");
+            break;
+          }
+        }
+      }
+      function swapClasses(elem, targetClass) {
+        elem.className = targetClass;
+      }
+    </script>
+  </body>
+</html>
